@@ -1,0 +1,43 @@
+---
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+import profilePicture from "../assets/profile-picture.png";
+import resume from "../assets/resume.pdf";
+---
+
+<header>
+  <Image src={profilePicture} alt="Profile Picture" class="profile-image" />
+  <div class="header-content">
+    <h1>Eric Dodson</h1>
+    <div class="contact-info">
+      <p>Frederick, MD | (410) 487-2849 | ericdodson88@gmail.com</p>
+      <div class="social-links">
+        <a
+          href="https://github.com/edodso2"
+          target="_blank"
+          class="social-link"
+        >
+          <i class="devicon-github-original"></i>
+          GitHub
+        </a>
+        <a
+          href="https://www.linkedin.com/in/eric-dodson-2a0a98aa/"
+          target="_blank"
+          class="social-link"
+        >
+          <i class="devicon-linkedin-plain"></i>
+          LinkedIn
+        </a>
+        <a href={resume} download class="social-link download-link">
+          <Icon name="pdf" />
+          Download PDF
+        </a>
+      </div>
+    </div>
+
+    <p class="headline">
+      Full Stack Engineer specializing in AI-driven development, API
+      architecture, and enterprise application automation
+    </p>
+  </div>
+</header>
