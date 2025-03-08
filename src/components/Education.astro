@@ -1,18 +1,15 @@
+---
+import ExperienceItem from './ExperienceItem.astro';
+---
+
 <section>
   <h2>Education</h2>
-  <div class="experience-item">
-    <div class="experience-header">
-      <div>
-        <h3 class="experience-title">
-          Bachelor of Science in Computer Science
-        </h3>
-        <div class="experience-company">
-          Towson University, Towson, Maryland
-        </div>
-      </div>
-      <div class="experience-dates">
-        <span class="experience-date">2013 - 2015</span>
-      </div>
-    </div>
-  </div>
+
+  <ExperienceItem
+    title="Bachelor of Science in Computer Science"
+    company="Towson University, Towson, Maryland"
+    startDate="2013"
+    endDate="2015"
+    location="Towson, MD"
+  />
 </section>

@@ -1,82 +1,47 @@
+---
+import ExperienceItem from '../components/ExperienceItem.astro';
+---
+
 <section>
   <h2>Work History</h2>
-  <div class="experience-item">
-    <div class="experience-header">
-      <div>
-        <h3 class="experience-title">Sr Software Engineer</h3>
-        <div class="experience-company">Sharecare</div>
-        <ul>
-          <li>
-            Work on a dedicated team responsible for enhancing and maintaining
-            the Sharecare platform
-          </li>
-          <li>
-            Pioneer AI-driven development practices to accelerate delivery of
-            member-facing features, including automated API generation and rapid
-            prototyping of UI components
-          </li>
-          <li>Triage/fix production issues using JIRA for tracking</li>
-          <li>
-            Hands on development with HTML, CSS, JavaScript, LWC, APEX, Node.js
-            and JAVA
-          </li>
-        </ul>
-      </div>
-      <div class="experience-dates">
-        <span class="experience-date">2021 - Present</span>
-        <span class="experience-location">Remote</span>
-      </div>
-    </div>
-  </div>
 
-  <div class="experience-item">
-    <div class="experience-header">
-      <div>
-        <h3 class="experience-title">Self-employed</h3>
-        <div class="experience-company">Tigerface Systems</div>
-        <ul>
-          <li>
-            Partnered in development and market launch of two Salesforce
-            AppExchange products
-          </li>
-          <li>
-            Utilized HTML, CSS, JavaScript expertise to build Lightning Web
-            Components & APEX REST API's
-          </li>
-          <li>
-            Designed and developed the company website along with all marketing
-            materials
-          </li>
-        </ul>
-      </div>
-      <div class="experience-dates">
-        <span class="experience-date">2019 - Present</span>
-        <span class="experience-location">Remote</span>
-      </div>
-    </div>
-  </div>
+  <ExperienceItem
+    title="Sr Software Engineer"
+    company="Sharecare"
+    startDate="2021"
+    endDate="Present"
+    location="Remote"
+    responsibilities={[
+      'Work on a dedicated team responsible for enhancing and maintaining the Sharecare platform',
+      'Pioneer AI-driven development practices to accelerate delivery of member-facing features, including automated API generation and rapid prototyping of UI components',
+      'Triage/fix production issues using JIRA for tracking',
+      'Hands on development with HTML, CSS, JavaScript, LWC, APEX, Node.js and JAVA',
+    ]}
+  />
 
-  <div class="experience-item">
-    <div class="experience-header">
-      <div>
-        <h3 class="experience-title">UI Developer</h3>
-        <div class="experience-company">CareFirst BlueCross BlueShield</div>
-        <ul>
-          <li>
-            Developed with HTML, CSS, and JavaScript (Angular) on Member facing
-            applications
-          </li>
-          <li>
-            Developed and maintained the corporate style guide website and
-            components
-          </li>
-          <li>Developed REST API's with JAVA for Member facing applications</li>
-        </ul>
-      </div>
-      <div class="experience-dates">
-        <span class="experience-date">2015 - 2021</span>
-        <span class="experience-location">Hybrid | Maryland</span>
-      </div>
-    </div>
-  </div>
+  <ExperienceItem
+    title="Self-employed"
+    company="Tigerface Systems"
+    startDate="2019"
+    endDate="Present"
+    location="Remote"
+    responsibilities={[
+      'Partnered in development and market launch of two Salesforce AppExchange products',
+      "Utilized HTML, CSS, JavaScript expertise to build Lightning Web Components & APEX REST API's",
+      'Designed and developed the company website along with all marketing materials',
+    ]}
+  />
+
+  <ExperienceItem
+    title="UI Developer"
+    company="CareFirst BlueCross BlueShield"
+    startDate="2015"
+    endDate="2021"
+    location="Hybrid | Maryland"
+    responsibilities={[
+      'Developed with HTML, CSS, and JavaScript (Angular) on Member facing applications',
+      'Developed and maintained the corporate style guide website and components',
+      "Developed REST API's with JAVA for Member facing applications",
+    ]}
+  />
 </section>

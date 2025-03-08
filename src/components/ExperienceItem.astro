@@ -1,0 +1,119 @@
+---
+interface Props {
+  title: string;
+  company: string;
+  startDate: string;
+  endDate?: string; // Optional, for current positions
+  location: string;
+  responsibilities?: string[];
+}
+
+const {
+  title,
+  company,
+  startDate,
+  endDate = 'Present',
+  location,
+  responsibilities = [],
+} = Astro.props;
+
+// Format the date range
+const dateRange = `${startDate} - ${endDate}`;
+---
+
+<div class="experience-item">
+  <div class="experience-header">
+    <div>
+      <h3 class="experience-title">{title}</h3>
+      <div class="experience-company">{company}</div>
+    </div>
+    <div class="experience-dates">
+      <span class="experience-date">{dateRange}</span>
+      <span class="experience-location">{location}</span>
+    </div>
+  </div>
+  <ul class="experience-content">
+    {responsibilities.map((item) => <li>{item}</li>)}
+  </ul>
+</div>
+
+<style>
+  .experience-item {
+    margin-bottom: 1.5rem;
+  }
+
+  .experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .experience-title {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin: 0;
+  }
+
+  .experience-company {
+    font-weight: bold;
+  }
+
+  .experience-dates {
+    display: flex;
+    flex-direction: column;
+    width: 12%;
+    flex-shrink: 0;
+  }
+
+  .experience-date {
+    color: var(--secondary-color);
+    font-style: italic;
+  }
+
+  .experience-location {
+    color: var(--accent-color);
+  }
+
+  .experience-content {
+    max-width: 800px;
+  }
+
+  @media (max-width: 768px) {
+    header {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .profile-image {
+      margin: 0 auto;
+    }
+
+    .header-content {
+      text-align: center;
+    }
+
+    .social-links {
+      justify-content: center;
+    }
+
+    .social-link-text {
+      display: none;
+    }
+
+    .headline {
+      margin-top: 1.2rem;
+    }
+
+    .experience-header {
+      display: block;
+    }
+
+    .experience-dates {
+      width: 100%;
+    }
+
+    .experience-content {
+      max-width: 100%;
+    }
+  }
+</style>
