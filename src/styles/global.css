@@ -2,21 +2,29 @@
   --primary-color: #2c3e50;
   --secondary-color: #3498db;
   --text-color: #333;
+  --text-color-light: #666;
   --background-color: #fff;
   --accent-color: #e74c3c;
+
+  --font-small: 0.8rem;
 }
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
   color: var(--text-color);
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 2rem;
   background-color: var(--background-color);
+  padding: 0;
+  margin: 0;
 }
 
-header {
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.overview {
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 2rem;
@@ -115,6 +123,19 @@ ul {
 
 .key-achievements li {
   margin-bottom: 0.5rem;
+}
+
+pre {
+  padding: 1rem;
+  border-radius: 0.25rem;
+}
+
+blockquote {
+  margin: 0;
+  padding: 0.15rem 1.5rem;
+  border-left: 4px solid #ddd;
+  background-color: #f7f7f7;
+  border-radius: 0.25rem;
 }
 
 @media (max-width: 768px) {

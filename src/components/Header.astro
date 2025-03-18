@@ -1,42 +1,105 @@
 ---
-import { Image } from 'astro:assets';
-import { Icon } from 'astro-icon/components';
-import profilePicture from '../assets/profile-picture.png';
-import resume from '../assets/resume.pdf';
+const NAV_ITEMS = [
+  { name: 'Home', path: '/' },
+  { name: 'Blog', path: '/blog' },
+];
+
+// Get the current path to determine which nav item is active
+const currentPath = Astro.url.pathname;
 ---
 
-<header>
-  <Image src={profilePicture} alt="Profile Picture" class="profile-image" />
-  <div class="header-content">
-    <h1>Eric Dodson</h1>
-    <div class="contact-info">
-      <div class="social-links">
-        <a
-          href="https://github.com/edodso2"
-          target="_blank"
-          class="social-link"
-        >
-          <i class="devicon-github-original"></i>
-          <span class="social-link-text">GitHub</span>
-        </a>
-        <a
-          href="https://www.linkedin.com/in/eric-dodson-2a0a98aa/"
-          target="_blank"
-          class="social-link"
-        >
-          <i class="devicon-linkedin-plain"></i>
-          <span class="social-link-text">LinkedIn</span>
-        </a>
-        <a href={resume} download class="social-link download-link">
-          <Icon name="pdf" />
-          <span class="social-link-text">Download PDF</span>
-        </a>
-      </div>
-    </div>
-
-    <p class="headline">
-      Full Stack Engineer specializing in AI-driven development, API
-      architecture, and enterprise application automation
-    </p>
+<nav class="navbar">
+  <div class="container">
+    <ul class="nav-links">
+      {
+        NAV_ITEMS.map((item) => (
+          <li>
+            <a
+              href={item.path}
+              class={currentPath === item.path ? 'active' : ''}
+            >
+              {item.name}
+              <span class="underline" />
+            </a>
+          </li>
+        ))
+      }
+    </ul>
   </div>
-</header>
+</nav>
+
+<style>
+  .navbar {
+    background-color: #191919;
+    color: #f8f8f8;
+    height: 2.2rem;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .logo a {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #f8f8f8;
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-links li {
+    margin-left: 1.5rem;
+  }
+
+  .nav-links a {
+    color: #f8f8f8;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 300;
+    transition: color 0.3s ease;
+    position: relative;
+    top: -0.145rem;
+    display: inline-block;
+  }
+
+  .nav-links a:hover {
+    color: #9ca3af;
+  }
+
+  .nav-links a .underline {
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #4285f4;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    transform-origin: center;
+  }
+
+  .nav-links a:hover .underline {
+    transform: scaleX(0.7);
+  }
+
+  .nav-links a.active .underline {
+    transform: scaleX(1);
+  }
+  .nav-links a.active {
+    color: #4285f4;
+  }
+</style>

@@ -1,4 +1,5 @@
 ---
+import Header from '../components/Header.astro';
 import '../styles/global.css';
 
 interface Props {
@@ -18,106 +19,9 @@ const { title } = Astro.props;
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
     />
-    <style>
-      body {
-        font-family:
-          system-ui,
-          -apple-system,
-          sans-serif;
-        line-height: 1.6;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 2rem;
-        color: #1a1a1a;
-      }
-
-      .tech-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-        gap: 1.5rem;
-        margin: 2rem 0;
-      }
-
-      .tech-item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 1rem;
-        border-radius: 8px;
-        transition: transform 0.2s;
-      }
-
-      .tech-item:hover {
-        transform: translateY(-2px);
-        background: #f8f9fa;
-      }
-
-      .tech-icon {
-        font-size: 2.5rem;
-        margin-bottom: 0.5rem;
-      }
-
-      .tech-label {
-        font-size: 0.875rem;
-        color: #4b5563;
-      }
-
-      .section {
-        margin-bottom: 2rem;
-      }
-
-      .section-title {
-        font-size: 1.5rem;
-        font-weight: bold;
-        margin-bottom: 1rem;
-        color: #2563eb;
-        border-bottom: 2px solid #e5e7eb;
-        padding-bottom: 0.5rem;
-      }
-
-      .achievement {
-        margin-bottom: 1rem;
-        padding-left: 1.5rem;
-        position: relative;
-      }
-
-      .achievement:before {
-        content: "•";
-        position: absolute;
-        left: 0.5rem;
-        color: #2563eb;
-      }
-
-      .work-entry {
-        margin-bottom: 2rem;
-      }
-
-      .work-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
-        margin-bottom: 0.5rem;
-      }
-
-      .company {
-        font-weight: bold;
-        font-size: 1.1rem;
-      }
-
-      .dates {
-        color: #4b5563;
-        font-size: 0.9rem;
-      }
-
-      .position {
-        font-style: italic;
-        color: #4b5563;
-        margin-bottom: 0.5rem;
-      }
-    </style>
   </head>
   <body>
+    <Header />
     <main>
       <slot />
     </main>
