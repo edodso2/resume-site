@@ -139,7 +139,7 @@ blockquote {
 }
 
 @media (max-width: 768px) {
-  header {
+  .overview {
     grid-template-columns: 1fr;
     text-align: center;
   }
