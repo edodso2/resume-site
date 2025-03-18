@@ -6,6 +6,16 @@ const NAV_ITEMS = [
 
 // Get the current path to determine which nav item is active
 const currentPath = Astro.url.pathname;
+
+// Helper function to check if a path is active
+const isActive = (path: string) => {
+  if (path === '/') {
+    return currentPath === '/';
+  }
+
+  // Check if currentPath starts with the nav item path
+  return currentPath.startsWith(path);
+}
 ---
 
 <nav class="navbar">
@@ -16,7 +26,7 @@ const currentPath = Astro.url.pathname;
           <li>
             <a
               href={item.path}
-              class={currentPath === item.path ? 'active' : ''}
+              class={isActive(item.path) ? 'active' : ''}
             >
               {item.name}
               <span class="underline" />
