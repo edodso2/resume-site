@@ -125,12 +125,19 @@ ul {
   margin-bottom: 0.5rem;
 }
 
-pre {
+.markdown-content img {
+  max-width: 600px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.markdown-content pre {
   padding: 1rem;
   border-radius: 0.25rem;
 }
 
-blockquote {
+.markdown-content blockquote {
   margin: 0;
   padding: 0.15rem 1.5rem;
   border-left: 4px solid #ddd;
