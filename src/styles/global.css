@@ -37,6 +37,7 @@ main {
   height: 150px;
   border-radius: 50%;
   object-fit: cover;
+  object-position: center -5px;
   border: 3px solid var(--secondary-color);
 }
 
