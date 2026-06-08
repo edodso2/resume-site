@@ -1,8 +1,8 @@
 ---
 import { Image } from 'astro:assets';
-import { Icon } from 'astro-icon/components';
 import profilePicture from '../assets/profile-picture.png';
 import resume from '../assets/resume.pdf';
+import pdfIcon from '../icons/pdf.svg?raw';
 ---
 
 <div class="overview">
@@ -28,7 +28,7 @@ import resume from '../assets/resume.pdf';
           <span class="social-link-text">LinkedIn</span>
         </a>
         <a href={resume} download class="social-link download-link">
-          <Icon name="pdf" />
+          <Fragment set:html={pdfIcon} />
           <span class="social-link-text">Download PDF</span>
         </a>
       </div>

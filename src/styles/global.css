@@ -79,6 +79,12 @@ h1 {
   color: var(--accent-color);
 }
 
+.download-link svg {
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+}
+
 .download-link:hover {
   color: #c0392b;
 }
